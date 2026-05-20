@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noah-42  <@student.42berlin.de>            +#+  +:+       +#+        */
+/*   By: norobins <norobins@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*                                                     #+#    #+#             */
-/*                                                    ###   ########.fr       */
+/*   Created: 2026/05/10 00:44:51 by norobins          #+#    #+#             */
+/*   Updated: 2026/05/10 22:05:13 by norobins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (blk[i] == t)
-		{
 			return ((void *)(blk + i));
-		}
 		i++;
 	}
 	return (NULL);
