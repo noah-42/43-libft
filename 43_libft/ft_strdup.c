@@ -12,16 +12,18 @@
 
 /*
 	_Overview_
-		Allocates sufficient memory for a copy of the string 's', makes the
-		copy, and returns a pointer to the copy 'dup'.
+		Allocates sufficient memory for a copy of the string 's', does the
+		copy, and returns a pointer to it.
+
+	_Safety Profile_
+		Checks whether the allocation of memory was succesful.
 
 	_Return value_
-		Returns a pointer to the copy --> 'dup'.
+		- Returns a pointer to the copy of the 's' --> 'dup'.
+		  --> this pointer may subsequently be used as an argument for free()
+				to the program or function that calls ft_strdup
 
-		The caller may subsequently use 'dup' as an argument for the
-		free() function.
-
-		Returns NULL if there is insufficient memory (aka allocation failure
+		- Returns NULL if there is insufficient memory (aka allocation failure
 		check).
 */
 
