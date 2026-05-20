@@ -12,13 +12,14 @@
 
 /*
 	_Overview_
-		Allocates sufficient memory for a copy of the string 's', does the
-		copy, and returns a pointer to it.
+		Allocates sufficient memory for a copy of the string 's', makes the
+		copy, and returns a pointer to the copy 'dup'.
 
 	_Return value_
-		Returns a pointer to the copy of the 's' --> 'dup'.
-		The pointer may subsequently be used as an argument to the function
-		free().
+		Returns a pointer to the copy --> 'dup'.
+
+		The caller may subsequently use 'dup' as an argument for the
+		free() function.
 
 		Returns NULL if there is insufficient memory (aka allocation failure
 		check).
