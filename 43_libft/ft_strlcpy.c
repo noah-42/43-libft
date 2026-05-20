@@ -61,6 +61,19 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 /******************************************************************
 
 
+
+__ Pseudo code & notes __
+	1. If 'dst_size' is 0 --> there is no room to copy so return the
+		length of 'src'
+	2. While 'src[i]' is not '\0' AND there is enough space left
+		('i < dst_size - 1')
+	3. Copy characters from 'src' to 'dst' until:
+		- 'src[i]' is the null terminator
+		- OR we're at one byte before the end of 'dst'
+	4. Write the null terminator to 'dst[i]'
+	5. Return the length of 'src' (calculated via ft_strlen)
+
+
 __ Scenarios & cases __
 +---------+---------+----------+----------+--------+-------------------------+
 | Example |   src   | dst_size |   dst    | return |       Truncated?        |
@@ -79,16 +92,5 @@ __ Scenarios & cases __
 |    6    | "hello" |     6    | "hello"  |   5    |   No (5 < 6, exact fit) |
 +---------+---------+----------+----------+--------+-------------------------+
 
-
-__ Pseudo code & notes __
-	1. If 'dst_size' is 0 --> there is no room to copy so return the
-		length of 'src'
-	2. While 'src[i]' is not '\0' AND there is enough space left
-		('i < dst_size - 1')
-	3. Copy characters from 'src' to 'dst' until:
-		- 'src[i]' is the null terminator
-		- OR we're at one byte before the end of 'dst'
-	4. Write the null terminator to 'dst[i]'
-	5. Return the length of 'src' (calculated via ft_strlen)
 
 *******************************************************************/

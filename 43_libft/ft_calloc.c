@@ -49,3 +49,22 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_memset(ptr, 0, total);
 	return (ptr);
 }
+
+/*
+	_Pseudo code_
+	1. If 'nmemb' or 'size' is 0 --> return malloc(0)
+		(a unique pointer that can be passed to free)
+
+	2. If 'nmemb' * 'size' would overflow (nmemb > SIZE_MAX / size)
+		--> return NULL
+
+	3. Calculate 'total' = 'nmemb' * 'size'
+
+	4. Allocate 'total' bytes via malloc
+
+	5. If malloc fails --> return NULL
+
+	6. Zero-fill the allocated memory via ft_memset
+
+	7. Return the pointer 'ptr'
+*/

@@ -47,3 +47,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/*
+	_Pseudo code_
+		1. Loop through 'blk' up to 'n' bytes:
+			- If 'blk[i]' == 't' (target)  --> return
+			pointer to 'blk + i' (this is the position
+			of the value stored at `blk[i]`
+			- Otherwise, increment 'i'
+		2. If not found --> return NULL
+*/

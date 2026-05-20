@@ -20,10 +20,11 @@
 	- finding a difference
 
 	_Return value_
-		- the memory address of the byte 'c' if it finds it; otherwise
-		- NULL
+		- A positive value if 's1' > 's2'
+		- A negative value if 's1' < 's2'
+		- 0 if both blocks are identical up to 'n' bytes
 
-	_Use case_
+		_Use case_
 		Useful for comparing various data types incl. binary files, images,
 		structs, etc.
 
@@ -49,3 +50,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/*
+	_Pseudo code_
+	1. Cast 's1' and 's2' to 'unsigned char *'
+	2. Loop through both blocks up to 'n' bytes:
+		- If 'str1[i]' != 'str2[i]' --> return the difference
+			('str1[i]' - 'str2[i]')
+		- Otherwise, increment 'i'
+	3. If all 'n' bytes are equal --> return 0
+*/

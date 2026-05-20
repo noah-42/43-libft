@@ -63,9 +63,27 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
 
 /******************************************************************
 
-
-__ Scenarios & cases __
 /*
+	__ Pseudo code & notes __
+		1. Find the length of 'dst' by walking through it --
+			but stop if we reach 'dst_size' (safety boundary)
+
+		2. Get the length of 'src' via ft_strlen
+
+		3. If 'dst_len' == 'dst_size' --> 'dst' is already full,
+			return 'dst_size + src_len' (nothing to append)
+
+		4. Append characters from 'src' to the end of 'dst' while
+			there is room ('dst_len + i + 1 < dst_size')
+
+		5. Write the null terminator to 'dst[dst_len + i]'
+
+		6. Return 'dst_len + src_len' (the total length tried to create)
+*/
+
+
+/*
+	__ Scenarios & cases __
 +---------+----------+----------+----------+-------------+--------+--------------------------+
 |   Ex.   |   dst    |   src    |   dst_   |     dst     | return |       Truncated?         |
 |         |          |          |   size   |    after    |(size_t)|                          |
@@ -84,22 +102,4 @@ __ Scenarios & cases __
 +---------+----------+----------+----------+-------------+--------+--------------------------+
 |    7    | "hello"  | " world" |    12    |"hello world"|   11   | No (11 < 12, exact fit)  |
 +---------+----------+----------+----------+-------------+--------+--------------------------+
-*/
-
-/*
-	__ Pseudo code & notes __
-		1. Find the length of 'dst' by walking through it --
-			but stop if we reach 'dst_size' (safety boundary)
-
-		2. Get the length of 'src' via ft_strlen
-
-		3. If 'dst_len' == 'dst_size' --> 'dst' is already full,
-			return 'dst_size + src_len' (nothing to append)
-
-		4. Append characters from 'src' to the end of 'dst' while
-			there is room ('dst_len + i + 1 < dst_size')
-
-		5. Write the null terminator to 'dst[dst_len + i]'
-
-		6. Return 'dst_len + src_len' (the total length tried to create)
 */

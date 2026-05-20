@@ -46,3 +46,18 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+_Pseudo code_
+	1. Get the length of 's' via ft_strlen
+	2. Start from the end of 's' (at the null terminator position)
+	3. Loop backwards through 's':
+		- If 's[i]' == 'c' --> return address of 's[i]'
+		- Decrement 'i'
+	4. If 'c' was not found --> return NULL
+
+	Note: by starting at the null terminator position, this naturally
+	handles the case where 'c' is '\0' -- it will match immediately
+	on the first iteration.
+
+*/
