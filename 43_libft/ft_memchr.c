@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noah-42  <@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	_Overview_
-		Enables callers to analyze and evaluate whether an integer (mapping
-		to an ASCII table with decimal base) represents an ASCII value within
-		the decimal ASCII table.
+/*
+	_Overview_
+		Searches a block of memory, 'blk', up to 'n' bytes for the first
+		occurence of a specific byte 'c'.
 
-		Note that if 'c' -- the integer parameter -- has a value outside the
-		range (e.g. negative or > 255) --> the function returns a 0 to
-		represent 'false'.
+	_Return value_
+		- the memory address of the byte 'c' if it finds it; otherwise
+		- NULL
 
-		In order for the function to return 1 ('true'), the value of 'c' must
-		fall within the relevant ASCII characters.
+	_Use case_
+		This is useful for all data types but ft_strchr is customized better
+		to handle strings as it handles '\0' whereas ft_memchr does not
+		explicitly check.
+
+		ft_memchr would treat '\0' as any other byte
+		whereas ft_strchr would stop upon reaching the null terminator.
 */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	unsigned char	*blk;
+	unsigned char	t;
+	size_t			i;
+
+	blk = (unsigned char *)s;
+	t = (unsigned char)c;
+	i = 0;
+	while (i < n)
+	{
+		if (blk[i] == t)
+		{
+			return ((void *)(blk + i));
+		}
+		i++;
+	}
+	return (NULL);
 }
