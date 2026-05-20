@@ -20,8 +20,14 @@
 	_NULL guard_
 		No use of NULL guard in this function because the original function
 		is intentionally designed to allow for "undefined behavior" --
-		including crashing. It is the caller's responsibility to use this
-		function safely.
+		including crashing.
+
+		It is the caller's responsibility to use this function safely.
+
+	_Risks_
+		- Crashing (segfault)
+		- Overwriting data
+		- Creating hidden bugs
 */
 
 #include "libft.h"
