@@ -47,3 +47,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
+/*
+	_Pseudo code_
+	1. Loop from 0 to 'n':
+		- Write the byte value of 'c' into 'blk[i]'
+	2. Return 's'
+*/

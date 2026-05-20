@@ -48,3 +48,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/*
+	_Pseudo code_
+		1. If 'n' is 0 --> return 'dest' (nothing to copy)
+		2. Loop from 0 to 'n':
+			- Copy 's[i]' into 'd[i]'
+		3. Return 'dest'
+*/

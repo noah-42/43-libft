@@ -60,10 +60,10 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 }
 
 /*
-	PSEUDO
-	1. To avoid potential overlap, check if 'dst' is before 'src'
-	2. If so, copy 'n' bytes from beginning to end
+	_Pseudo code_
+		1. To avoid potential overlap, check if 'dst' is before 'src'
+		2. If so, copy 'n' bytes from beginning to end
 
-	Otherwise
-	3. copy 'n' bytes from last byte first byte
+		Otherwise
+		3. copy 'n' bytes from last byte first byte
 */

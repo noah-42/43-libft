@@ -48,3 +48,12 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
+
+/*
+	_Pseudo code_
+	1. Loop through 's' character by character:
+		- If 's[i]' == 'c' --> return address of 's[i]'
+	2. After the loop, check if 'c' is '\0':
+		- If yes --> return address of the null terminator
+	3. If 'c' was not found --> return NULL
+*/
