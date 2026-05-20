@@ -46,13 +46,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
 	size_t	i;
 
 	dst_len = 0;
-	while (dst_len < dst_size && dst[dst_len] != '\0')
+	while (dst_len < dst_size && dst[dst_len])
 		dst_len++;
 	src_len = ft_strlen(src);
 	if (dst_len == dst_size)
 		return (dst_size + src_len);
 	i = 0;
-	while (src[i] != '\0' && (dst_len + i + 1) < dst_size)
+	while (src[i] && (dst_len + i + 1) < dst_size)
 	{
 		dst[dst_len + i] = src[i];
 		i++;
@@ -87,14 +87,19 @@ __ Scenarios & cases __
 */
 
 /*
-	PSEUDO CODE
-	1. Find the length of 'dst' by walking through it --
-		but stop if we reach 'dst_size' (safety boundary)
-	2. Get the length of 'src' via ft_strlen
-	3. If 'dst_len' == 'dst_size' --> 'dst' is already full,
-		return 'dst_size + src_len' (nothing to append)
-	4. Append characters from 'src' to the end of 'dst' while
-		there is room ('dst_len + i + 1 < dst_size')
-	5. Write the null terminator to 'dst[dst_len + i]'
-	6. Return 'dst_len + src_len' (the total length tried to create)
+	__ Pseudo code & notes __
+		1. Find the length of 'dst' by walking through it --
+			but stop if we reach 'dst_size' (safety boundary)
+
+		2. Get the length of 'src' via ft_strlen
+
+		3. If 'dst_len' == 'dst_size' --> 'dst' is already full,
+			return 'dst_size + src_len' (nothing to append)
+
+		4. Append characters from 'src' to the end of 'dst' while
+			there is room ('dst_len + i + 1 < dst_size')
+
+		5. Write the null terminator to 'dst[dst_len + i]'
+
+		6. Return 'dst_len + src_len' (the total length tried to create)
 */
