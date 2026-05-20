@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: noah     <noah-   @student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/10 21:14:20 by noah-42           #+#    #+#             */
-/*   Updated: 2026/05/18 09:54:41 by noah-42           #+#    #+#             */
+/*                                                     #+#    #+#             */
+/*                                                    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 /*	_Overview_
 		Enables callers to assign a specific byte value up to a given # of
