@@ -61,10 +61,9 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 /*
 	PSEUDO
-	1. If the destination comes before the source,
-		copy source to destination; and end
+	1. To avoid potential overlap, check if 'dst' is before 'src'
+	2. If so, copy 'n' bytes from beginning to end
 
-	2. Otherwise...for as many characters as there characters
-		write them from end to beginning and truncate it
-
+	Otherwise
+	3. copy 'n' bytes from last byte first byte
 */
