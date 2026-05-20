@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: norobins <norobins@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: noah     <noah-   @student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*                                                     #+#    #+#             */
 /*                                                    ###   ########.fr       */
