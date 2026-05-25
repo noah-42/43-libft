@@ -47,7 +47,7 @@ t_list	*ft_lstnew(void *content)
 }
 
 /*
-	PSEUDO CODE
+	_Pseudo code_
 	1. Allocate memory for a new 't_list' node
 	2. If malloc fails --> return NULL
 	3. Store 'content' in 'new_node->content'

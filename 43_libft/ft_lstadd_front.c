@@ -38,7 +38,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 }
 
 /*
-_PSEUDO CODE_
+_Pseudo code_
 		1. If 'lst' or 'new' is NULL --> return (do nothing)
 		2. Set 'new->next' to point to the current first node ('*lst')
 		3. Update '*lst' to point to 'new' (new becomes first node)
