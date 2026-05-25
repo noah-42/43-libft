@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 /*	_Overview_
 		Enables callers to assign a specific byte value up to a given # of
 		bytes in a block.
